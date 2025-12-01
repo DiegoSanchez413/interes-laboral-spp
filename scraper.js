@@ -13,7 +13,6 @@ function getFechaPeru() {
     return `${dd}/${mm}/${yyyy}`;
 }
 
-
 (async () => {
     const fechaParam = process.argv[2]; // ej: "30/11/2025"
     const fechaInput = fechaParam || getFechaPeru();
@@ -36,9 +35,17 @@ function getFechaPeru() {
     await page.keyboard.press('Backspace');
     await page.type('#ctl00_cphContent_rdpDate_dateInput', fechaInput);
     await page.keyboard.press('Enter');
-    await page.waitForTimeout(400);
-    await page.click('#ctl00_cphContent_btnConsultar');
-    await page.waitForTimeout(700);
+
+    // Esperar a que el input termine de procesar el cambio
+    await page.waitForTimeout(600);
+
+    // Cargar y hacer click seguro en el botón
+    await page.waitForSelector('#ctl00_cphContent_btnConsultar', { timeout: 5000 });
+    await page.$eval('#ctl00_cphContent_btnConsultar', (btn) => btn.click());
+
+    // Dar tiempo a que recargue
+    await page.waitForTimeout(1000);
+
 
     const data = await page.evaluate(() => {
         const getText = (selector) => {
@@ -64,7 +71,7 @@ function getFechaPeru() {
         };
     });
 
-    console.log("JSON LIMPIO:", data);
+    // console.log("JSON LIMPIO:", data);
 
     // Normalizar la fecha para usarla como filename
     const fileName = data.fecha.replace(/\//g, '-'); // 13/11/2025 → 13-11-2025
