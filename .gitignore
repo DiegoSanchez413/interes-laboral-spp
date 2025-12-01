@@ -1,0 +1,31 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.env
+
+# TypeScript
+dist/
+build/
+*.tsbuildinfo
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Data/output (opcional si generas resultados)
+data.json
+output.json
+*.csv
+*.xlsx
+
+# Puppeteer Chromium cache
+.cache/

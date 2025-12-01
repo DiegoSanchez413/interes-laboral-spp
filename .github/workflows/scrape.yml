@@ -1,0 +1,35 @@
+name: Scrape Interes Legal
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Todos los días a la 1:00 a.m. hora Perú (06:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16.20.2'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar scraper
+        run: node scraper.js
+
+      - name: Push cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "📦 Datos actualizados automáticamente" || echo "Sin cambios para commitear"
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
