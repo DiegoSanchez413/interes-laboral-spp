@@ -1,19 +1,22 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-function getFechaDefault(fechaParam) {
-    if (fechaParam) return fechaParam;
+function getFechaPeru() {
+    const peruNow = new Date(
+        new Date().toLocaleString("en-US", { timeZone: "America/Lima" })
+    );
 
-    const hoy = new Date();
-    const dd = String(hoy.getDate()).padStart(2, '0');
-    const mm = String(hoy.getMonth() + 1).padStart(2, '0');
-    const yyyy = hoy.getFullYear();
+    const dd = String(peruNow.getDate()).padStart(2, '0');
+    const mm = String(peruNow.getMonth() + 1).padStart(2, '0');
+    const yyyy = peruNow.getFullYear();
+
     return `${dd}/${mm}/${yyyy}`;
 }
 
+
 (async () => {
     const fechaParam = process.argv[2]; // ej: "30/11/2025"
-    const fechaInput = getFechaDefault(fechaParam);
+    const fechaInput = fechaParam || getFechaPeru();
 
     const browser = await puppeteer.launch({
         headless: 'new',
