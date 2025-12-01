@@ -8,7 +8,7 @@ El proceso está totalmente automatizado mediante GitHub Actions, sin necesidad 
 
 Puedes acceder directamente a los datos en formato JSON usando la siguiente URL:
 
-https://raw.githubusercontent.com/DiegoSanchez413/interes-laboral-spp/main/data/13-11-2025.json
+https://raw.githubusercontent.com/DiegoSanchez413/interes-laboral-spp/main/data/30-11-2025.json
 
 Solo cambia el nombre del archivo por la fecha deseada en formato **DD-MM-YYYY**, por ejemplo:
 
