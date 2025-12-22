@@ -1,0 +1,13 @@
+{
+  "fecha": "22/12/2025",
+  "moneda_nacional": {
+    "tasa_anual": null,
+    "factor_diario": null,
+    "factor_acumulado": null
+  },
+  "moneda_extranjera": {
+    "tasa_anual": null,
+    "factor_diario": null,
+    "factor_acumulado": null
+  }
+}
