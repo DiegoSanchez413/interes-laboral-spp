@@ -1,0 +1,13 @@
+{
+  "fecha": "01/01/2026",
+  "moneda_nacional": {
+    "tasa_anual": 1.97,
+    "factor_diario": 0.00005,
+    "factor_acumulado": 2.09506
+  },
+  "moneda_extranjera": {
+    "tasa_anual": 1.14,
+    "factor_diario": 0.00003,
+    "factor_acumulado": 0.77469
+  }
+}
