@@ -1,0 +1,13 @@
+{
+  "fecha": "26/02/2026",
+  "moneda_nacional": {
+    "tasa_anual": null,
+    "factor_diario": null,
+    "factor_acumulado": null
+  },
+  "moneda_extranjera": {
+    "tasa_anual": null,
+    "factor_diario": null,
+    "factor_acumulado": null
+  }
+}
