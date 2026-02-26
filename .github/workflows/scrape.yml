@@ -2,7 +2,7 @@ name: Scrape Interes Laboral SPP
 
 on:
   schedule:
-    - cron: '0 12 * * *' # Todos los días a las 7:00 a.m. hora Perú (12:00 UTC)
+    - cron: '5 11 * * *' # Todos los días a las 6:05 a.m. hora Perú (11:05 UTC)
   workflow_dispatch:
 
 jobs:
