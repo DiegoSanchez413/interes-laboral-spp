@@ -20,7 +20,7 @@ Los nombres de archivo siempre usan el formato **DD-MM-YYYY**, ya que provienen 
 
 ## 🔄 Frecuencia de actualización
 
-El bot se ejecuta **automáticamente todos los días a la 1:00 a.m. (hora de Perú)**.
+El bot se ejecuta **automáticamente todos los días a las 7:00 a.m. (hora de Perú)**.
 Cada ejecución consulta la Tasa de Interés Legal Laboral vigente para ese día y guarda un archivo nuevo si la SBS publica una fecha distinta.
 
 Esto garantiza que el repositorio siempre tenga la información más reciente disponible.

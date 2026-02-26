@@ -1,13 +1,13 @@
 {
   "fecha": "01/12/2025",
   "moneda_nacional": {
-    "tasa_anual": null,
-    "factor_diario": null,
-    "factor_acumulado": null
+    "tasa_anual": 2.06,
+    "factor_diario": 0.00006,
+    "factor_acumulado": 2.09338
   },
   "moneda_extranjera": {
-    "tasa_anual": null,
-    "factor_diario": null,
-    "factor_acumulado": null
+    "tasa_anual": 1.27,
+    "factor_diario": 0.00004,
+    "factor_acumulado": 0.77373
   }
 }
