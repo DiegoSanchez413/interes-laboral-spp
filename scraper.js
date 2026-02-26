@@ -16,6 +16,7 @@ function getFechaPeru() {
 (async () => {
     const fechaParam = process.argv[2]; // ej: "30/11/2025"
     const fechaInput = fechaParam || getFechaPeru();
+    console.log(`📅 Consultando fecha: ${fechaInput}`);
 
     const browser = await puppeteer.launch({
         headless: 'new',
